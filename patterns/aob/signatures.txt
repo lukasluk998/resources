@@ -1,0 +1,31 @@
+# Rust Game AOB Signatures
+# Format: Name: Pattern (instruction info)
+
+# LocalPlayer singleton (primary pattern)
+# RIP-relative MOV, offset at +3, instruction length 7
+LocalPlayer: 48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 49
+
+# LocalPlayer alternative pattern
+LocalPlayer_Alt: 48 8B 0D ? ? ? ? 48 85 C9 0F 84
+
+# ClientEntities / BaseNetworkable
+# RIP+3, len 7
+ClientEntities: 48 8B 05 ? ? ? ? 48 8B 88 ? ? ? ? 48 85 C9
+
+# GameObjectManager
+GameObjectManager: 48 8B 0D ? ? ? ? 48 8B 01 48 8B 40
+
+# Entity List
+EntityList: 48 8B 05 ? ? ? ? 48 8B 88 ? ? ? ? E8
+
+# Transform component
+Transform: 48 8B 80 ? ? ? ? 48 85 C0 74 ? 48 8B 40
+
+# Unity Engine patterns
+UnityEngine_Object: 48 8B 05 ? ? ? ? 48 8B 88 ? ? ? ? 48 85 C9 0F 84
+
+# Recoil function signature
+RecoilFunction: 48 89 5C 24 ? 57 48 83 EC ? 48 8B F9 E8 ? ? ? ? 48 8B 87
+
+# Health update
+HealthUpdate: F3 0F 10 89 ? ? ? ? 0F 2F C8 76 ? F3 0F 11 81
