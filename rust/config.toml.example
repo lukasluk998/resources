@@ -1,0 +1,130 @@
+# Rust EAC Bypass Cheat v3.4 - Configuration
+# Copy this file to config.toml and edit
+
+# ============================================================================
+# QUICK START PRESETS
+# ============================================================================
+# Uncomment ONE of these presets, or customize below
+
+# preset = "ultra_safe"    # Main account (12-24 months survival)
+# preset = "balanced"      # Alt account (6-12 months survival)
+# preset = "rage"          # Burner account (2-4 weeks survival)
+# preset = "stealth_stream" # For streaming (no visual indicators)
+
+# ============================================================================
+# LICENSE (Commercial Version)
+# ============================================================================
+[license]
+key = "FREE-TRIAL"
+license_type = "Free"  # Free, Basic, Pro, Lifetime, Developer
+# expires_at = 1735689600  # Unix timestamp (optional)
+hwid = ""
+max_sessions = 1
+
+# ============================================================================
+# v3.4 ULTIMATE SAFETY FEATURES (CRITICAL!)
+# ============================================================================
+behavioral_limiter_enabled = true    # Track stats, prevent outliers
+anti_debug_enabled = true            # Detect debuggers/analysis tools
+anti_debug_auto_exit = true          # Exit if debugger detected
+gradual_unlock_enabled = true        # MOST IMPORTANT! Unlock features over 12 days
+string_obfuscation_enabled = true    # Encrypt strings in binary
+
+# ============================================================================
+# SAFETY MODE
+# ============================================================================
+mode = "Legit"  # "Legit" or "Rage"
+
+# ============================================================================
+# FEATURES
+# ============================================================================
+esp_enabled = true
+no_recoil_method = "Macro"  # "None", "Macro", "Hardware", "MemoryPatch"
+aimbot_enabled = false      # Not implemented yet
+item_esp_enabled = false
+
+# ============================================================================
+# ESP OPTIMIZATION (v3.2)
+# ============================================================================
+max_esp_distance = 300.0
+esp_distance_lod = true     # Distance-based level of detail
+esp_fov_culling = true      # Only show players in FOV
+esp_fov_angle = 90.0
+esp_caching = true          # Cache player data
+
+# ============================================================================
+# ADVANCED SAFETY FEATURES (v3.3)
+# ============================================================================
+external_overlay_enabled = true      # External window (SAFER)
+randomized_reads = true              # Randomize read patterns (SAFER)
+memory_batching = true               # Batch reads (SAFER + FASTER)
+screenshot_protection = true         # Hide during screenshots (SAFER)
+screenshot_detection_strategy = "Basic"  # "None", "Basic", "Advanced", "Paranoid"
+
+# ============================================================================
+# RECOIL HELPER (v3.2 - Read-Only)
+# ============================================================================
+recoil_helper_enabled = true
+recoil_compensation_strength = 0.8
+recoil_show_weapon_info = true
+recoil_show_pattern = false
+recoil_crosshair_color = 0x00FF00
+
+# ============================================================================
+# KERNEL DRIVER
+# ============================================================================
+use_kernel_driver = false
+driver_path = ""
+
+# ============================================================================
+# HUMANIZATION (Makes behavior look natural)
+# ============================================================================
+humanization_enabled = true
+random_delays = true
+miss_shot_chance = 0.15              # Miss 15% of shots
+reaction_delay_ms = [200, 400]       # 200-400ms reaction time
+esp_update_interval_ms = [300, 500]  # ESP update rate
+
+# ============================================================================
+# GAMEPLAY LIMITS
+# ============================================================================
+max_kd_ratio = 3.5                   # Stop being obvious above this
+intentional_deaths = true            # Die sometimes on purpose
+check_corners_naturally = true       # Look around like real player
+max_session_hours = 4                # Auto-exit after X hours
+
+# ============================================================================
+# SERVER PREFERENCES
+# ============================================================================
+avoid_official_servers = true
+prefer_community_servers = true
+max_server_population = 100
+
+# ============================================================================
+# BEHAVIORAL LIMITER SETTINGS (v3.4)
+# ============================================================================
+[behavioral_limiter]
+max_kd_ratio = 3.5
+max_headshot_percentage = 0.40       # 40% max
+max_accuracy = 0.70                  # 70% max
+max_session_hours = 4.0
+emergency_kd_threshold = 5.0         # Force death if K/D > 5.0
+min_deaths_per_hour = 3.0            # At least 3 deaths/hour
+
+# ============================================================================
+# STATISTICS & TELEMETRY
+# ============================================================================
+track_statistics = true
+upload_anonymous_stats = false
+
+# ============================================================================
+# AUTO-UPDATE (Commercial Version)
+# ============================================================================
+auto_update_check = true
+update_channel = "stable"  # "stable", "beta", "dev"
+
+# ============================================================================
+# TELEMETRY
+# ============================================================================
+telemetry_enabled = false
+crash_reports = false

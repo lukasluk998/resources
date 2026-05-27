@@ -1,0 +1,19 @@
+[package]
+name = "rust-external"
+version = "1.0.0"
+edition = "2021"
+
+[[bin]]
+name = "rust-external"
+path = "src/main.rs"
+
+[dependencies]
+winapi = { version = "0.3", features = ["winuser", "winnt", "processthreadsapi", "memoryapi", "handleapi", "tlhelp32", "psapi", "fileapi", "ioapiset"] }
+rand = "0.8"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
